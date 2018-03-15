@@ -1,13 +1,6 @@
-<header>
-    <div align ="right">
-        <h3>Hello: <?php echo $data['UserName']; ?> 
-        <form action="/" method="post">
-            <input type="submit" name="logout" value="Logout"/>
-        </form>
-    </div>
-</header>   
-   
-   <form action="/Calculator" method="post">
+
+<div>
+    <form action="/Calculator/" method="post">
         <input type="text" name = "number1" />
         <br/>
         <button name="Add">+</button>
@@ -17,12 +10,11 @@
         <br/>
         <input type="text" name ="number2" />
     </form>
-
     <h1> Result: <?php echo $data['result']; ?> </h1>
-    <?php
-        $message = new Messages;
-        $message->showMessage();
-        
-        
-    ?>
+</div>
+
+<?php
+    $message = new Messages;
+    $message->showMessage();    
+?>
 

@@ -8,11 +8,13 @@ class Route
         $userData = new Login;
 
         if (isset($_POST['logout'])) {
-           $session->_delete('userLogged');
+           //$session->_delete('userLogged');
+           $controller_name = 'Home';
+            $action_name     = 'index';
         }
 
         // контроллер и действие по умолчанию    
-        $controller_name = 'Login';
+        $controller_name = 'Home';
         $action_name     = 'index';
 
         $userData->userDataCheck($_POST);
