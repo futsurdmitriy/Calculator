@@ -10,11 +10,7 @@
         <br/>
         <input type="text" name ="number2" />
     </form>
-    <h1> Result: <?php echo $data['result']; ?> </h1>
+    <h1> Result: <?php echo $data['result'] . $message->showMessage();; ?> </h1>
 </div>
 
-<?php
-    $message = new Messages;
-    $message->showMessage();    
-?>
 

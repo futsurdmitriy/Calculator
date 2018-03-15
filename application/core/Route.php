@@ -8,9 +8,7 @@ class Route
         $userData = new Login;
 
         if (isset($_POST['logout'])) {
-           //$session->_delete('userLogged');
-           $controller_name = 'Home';
-            $action_name     = 'index';
+           $session->_delete('userLogged');
         }
 
         // контроллер и действие по умолчанию    
@@ -53,7 +51,7 @@ class Route
         } else {
             // здесь также разумнее было бы кинуть исключение
             Route::ErrorPage404();
-        }
+        }        
     }
     
     function ErrorPage404()

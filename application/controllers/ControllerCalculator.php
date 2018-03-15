@@ -14,7 +14,6 @@ class ControllerCalculator extends Controller
         
         $dataToCalculate = $dataEntry->CorrectDataCheck($_POST);
         $data['result'] = $calculator->calculate($dataToCalculate);
-        //$data['UserName'] = $session->get('userLogged');            
         
         $this->view->generate('calculator_view.php', 'template_view.php', $data);                   
     }

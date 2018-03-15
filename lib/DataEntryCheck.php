@@ -15,9 +15,9 @@ class DataEntryCheck
                         isset($dataToCheck['number1']) ||
                         isset($dataToCheck['number2'])
                     ) && (
-                        is_null($dataToCheck['number1'])
+                        NULL==($dataToCheck['number1'])
                     ) || (
-                        is_null($dataToCheck['number2'])
+                        NULL==($dataToCheck['number2'])
                     )
                 )
             ) {

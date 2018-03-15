@@ -33,9 +33,7 @@ class Login
             )
         ) {
             //do nothing
-        }
-
-        elseif (
+        } elseif (
             !empty($userDataToCheck) &&
             (
                 isset($userDataToCheck['login']) ||
@@ -48,7 +46,7 @@ class Login
                         $userDataToCheck['password']==$value
                     ) {
                         $session->set('userLogged',$key);
-                        header('Location: /Calculator/index');
+                        header('Location: /Calculator/');
                     }
                 }
                 

@@ -11,7 +11,7 @@
         <li><a href="/Calculator/">Calculator</a></li>
         <li><a href="/About/">About</a></li>
         <li id="logout1">
-            <form action="/Login/" methhod='post'>
+            <form action="" method='post'>
                 <input id="logout" type="submit" name="logout" value="Logout"/>
             </form>
         </li>
