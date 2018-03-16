@@ -3,17 +3,17 @@ class Route
 {
     static function start()
     {	
-        $session  = Session::getInstance();		
-        $message  = new Messages;
+        $session  = Session::getInstance();
         $userData = new Login;
-
-        if (isset($_POST['logout'])) {
-           $session->_delete('userLogged');
-        }
 
         // контроллер и действие по умолчанию    
         $controller_name = 'Home';
         $action_name     = 'index';
+
+        if (isset($_POST['logout'])) {
+           $session->_delete('userLogged');
+           header('Location:/'.$controller_name);
+        }       
 
         $userData->userDataCheck($_POST);
         $routes = explode('/', $_SERVER['REQUEST_URI']);

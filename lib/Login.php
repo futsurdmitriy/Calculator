@@ -49,7 +49,6 @@ class Login
                         header('Location: /Calculator/');
                     }
                 }
-                
             $message->setMessage('Error','Wrong login or password');
         }
     }

@@ -1,5 +1,4 @@
 
-<div>
     <form action="/Calculator/" method="post">
         <input type="text" name = "number1" />
         <br/>
@@ -10,7 +9,6 @@
         <br/>
         <input type="text" name ="number2" />
     </form>
-    <h1> Result: <?php echo $data['result'] . $message->showMessage();; ?> </h1>
-</div>
+    <h3> Result: <?php echo $data['result'] . $message->showMessage();; ?> </h3>
 
 
