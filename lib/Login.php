@@ -1,26 +1,67 @@
 <?php
 class Login
 {
-    /*$users = [
-        [
-            'id'       => 1,
-            'username' => 'JohnDoe',
-            'password' => '1234'
-        ],
-        [
-            'id'       => 2,
-            'username' => 'CarlJohnson',
-            'password' => '1997'
-        ]
-    ];*/
-
     public $usersData = array(
         "JohnDoe"     => "1234",
         "CarlJohnson" => "1997",
         "Jabba"       => "Hatt1981",
         );
 
-    public function userDataCheck($userDataToCheck)
+
+protected $servername = "localhost";
+protected $username = "dfutsur";
+protected $password = "1Qazqwer97";
+protected $dbname = "mydb";
+
+public function sqlsmth($userDataToCheck)
+{
+    $session = Session::getInstance();
+    $message = new Messages;
+
+    // Create connection
+    $conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT  UserName, Password FROM users";
+    $result = $conn->query($sql);
+
+    if (
+        empty($userDataToCheck) &&
+        (
+            !isset($userDataToCheck['login']) ||
+            !isset($userDataToCheck['password'])
+        )
+    ) {
+        //do nothing
+    } elseif (
+        !empty($userDataToCheck) &&
+        (
+            isset($userDataToCheck['login']) ||
+            isset($userDataToCheck['password'])
+        )
+    ) {
+        if ($result->num_rows > 0) {
+            // output data of each row
+            foreach ($result as $row) {
+                if (
+                    $userDataToCheck['login']==$row['UserName'] &&
+                    $userDataToCheck['password']==$row['Password']
+                ) {
+                    $session->set('userLogged',$key);
+                    header('Location: /Calculator/');
+                }
+            }
+        $message->setMessage('Error','Wrong login or password'); 
+            }
+        }
+        $conn->close();
+    } 
+    
+
+     public function userDataCheck($userDataToCheck)
     {
         $session = Session::getInstance();
         $message = new Messages;

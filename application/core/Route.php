@@ -15,7 +15,8 @@ class Route
            header('Location:/'.$controller_name);
         }       
 
-        $userData->userDataCheck($_POST);
+        //$userData->userDataCheck($_POST);
+        $userData->sqlsmth($_POST);
         $routes = explode('/', $_SERVER['REQUEST_URI']);
 
         // получаем имя контроллера

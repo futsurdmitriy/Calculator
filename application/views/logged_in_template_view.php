@@ -21,11 +21,12 @@
                     </li>
                     <li id="login">
                             <?php echo "Hello: " . $session->get('userLogged');?>
-                    </li>               
+                    </li>
                 </ul>
             </nav>
-        </header>    
-        <?php include 'application/views/'.$content_view; ?>        
+        </header>
+        <?php include 'application/views/'.$content_view; ?>
+        <footer>© 2018</footer>
     </div>
 </body>
 </html>

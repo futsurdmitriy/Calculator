@@ -8,17 +8,18 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>THis is a simple Calculator</h1>
+            <h1>This is a simple Calculator</h1>
             <nav>
                 <ul>
                     <li><a href="/Home/">Home</a></li>
                     <li><a href="/Calculator/">Calculator</a></li>
                     <li><a href="/About/">About</a></li>
-                    <li id="SignInSignUp"><a href="/Login/">SignIn / SignUp</a></li>        
+                    <li id="SignInSignUp"><a href="/Login/">SignIn / SignUp</a></li>
                 </ul>
             </nav>
-        </header>    
-        <?php include 'application/views/'.$content_view; ?>        
+        </header>
+        <?php include 'application/views/'.$content_view; ?>
+        <footer>© 2018</footer>
     </div>
 </body>
 </html>
