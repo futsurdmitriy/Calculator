@@ -27,8 +27,8 @@ header{
 
 .about_content{
     background-color: #373833;
-    float: left;
-    width: 659px;
+    text-align:justify;
+    width: 939px;
     border-right: 1px solid #eeeeee;
 }
 
@@ -67,7 +67,8 @@ nav ul {
     padding: 5px 0px 5px 30px;
 }
 
-nav li {
+nav li {    
+    font-size: 1.2em;
     display: inline;
     margin-right: 40px;
 }
@@ -79,6 +80,14 @@ nav li a {
 nav li a:hover, nav li a.current {
     color: #000000;
 }
+
+section.login {
+    background-color: #373833;
+    text-align: center;
+    width: 939px;
+    border-right: 1px solid #373833;
+}
+
 
 section.about {
     background-color: #373833;
@@ -189,11 +198,13 @@ input[type=submit]:hover {
 }
 
 input#logout[type=submit] {
+    vertical-align: middle;
+    font-size: 0.9em;
     background-color: rgb(83, 83, 83);
     color: white;
     display: inline;
-    margin:  -5px 10px 10px 10px;
-    padding: 4px;
+    margin: -4px 10px 4px 10px;
+    padding: 3px 3px 1px 3px;
 }
 
 input#logout[type=submit]:hover {

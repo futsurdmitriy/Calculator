@@ -2,18 +2,18 @@
 class Route
 {
     static function start()
-    {	
+    {
         $session  = Session::getInstance();
         $userData = new Login;
 
-        // контроллер и действие по умолчанию    
+        // контроллер и действие по умолчанию
         $controller_name = 'Home';
         $action_name     = 'index';
 
         if (isset($_POST['logout'])) {
            $session->_delete('userLogged');
            header('Location:/'.$controller_name);
-        }       
+        }
 
         //$userData->userDataCheck($_POST);
         $userData->sqlsmth($_POST);
@@ -22,7 +22,7 @@ class Route
         // получаем имя контроллера
         if (!empty($routes[1])) {
             $controller_name = ucfirst( $routes[1] );
-        }        
+        }
         // получаем имя экшена
         if (!empty($routes[2])) {
             $action_name = $routes[2];
@@ -41,20 +41,20 @@ class Route
         } else {
             Route::ErrorPage404();
         }
-        
+
         // создаем контроллер
         $controller = new $controller_name;
         $action     = $action_name;
-        
+
         if (method_exists($controller, $action)) {
             // вызываем действие контроллера
             $controller->$action();
         } else {
             // здесь также разумнее было бы кинуть исключение
             Route::ErrorPage404();
-        }        
+        }
     }
-    
+
     function ErrorPage404()
     {
         $host = 'http://'.$_SERVER['HTTP_HOST'].'/';

@@ -9,7 +9,7 @@ class Login
 
 
 protected $servername = "localhost";
-protected $username = "dfutsur";
+protected $username = "root";
 protected $password = "1Qazqwer97";
 protected $dbname = "mydb";
 
@@ -45,12 +45,12 @@ public function sqlsmth($userDataToCheck)
     ) {
         if ($result->num_rows > 0) {
             // output data of each row
-            foreach ($result as $row) {
+            foreach ($result as $value ) {
                 if (
-                    $userDataToCheck['login']==$row['UserName'] &&
-                    $userDataToCheck['password']==$row['Password']
+                    $userDataToCheck['login']==$value['UserName'] &&
+                    $userDataToCheck['password']==$value['Password']
                 ) {
-                    $session->set('userLogged',$key);
+                    $session->set('userLogged',$value['UserName']);
                     header('Location: /Calculator/');
                 }
             }

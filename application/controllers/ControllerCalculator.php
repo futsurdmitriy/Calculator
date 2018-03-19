@@ -11,10 +11,15 @@ class ControllerCalculator extends Controller
         $dataEntry = new DataEntryCheck;
         $calculator = new Calculator;
         $session = Session::getInstance();
-        
-        $dataToCalculate = $dataEntry->CorrectDataCheck($_POST);
-        $data['result'] = $calculator->calculate($dataToCalculate);
-        
-        $this->view->generate('calculator_view.php', 'template_view.php', $data);                   
+        $message = new Messages;
+
+        if (true == $session->get('userLogged')) {
+            $dataToCalculate = $dataEntry->CorrectDataCheck($_POST);
+            $data['result'] = $calculator->calculate($dataToCalculate);            
+            $this->view->generate('calculator_view.php', 'template_view.php', $data); 
+        } else {
+            $message->setMessage('Error','You must sign in to use the calculator');
+            $this->view->generate('login_view.php', 'template_view.php');
+        }
     }
 }

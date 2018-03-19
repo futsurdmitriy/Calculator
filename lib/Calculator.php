@@ -13,7 +13,7 @@ class Calculator
             $num1 = $data['number1'];
             $num2 = $data['number2'];
 
-            if(false !== $session->get('userLogged')) {
+            //if(true == $session->get('userLogged')) {
                 if (isset($data['Add'])) {
                     $this->result = $num1 + $num2;
 
@@ -37,10 +37,10 @@ class Calculator
                             return $this->result;
                         }
                     }
-                } else {
-                    $message->setMessage('Error','Please relogin to continue');
-                    header('Location: http://calc.com');
-                }
+               // } else {
+                  //  $message->setMessage('Error','Please relogin to continue');
+                   // header('Location: http://calc.com');
+                //}
         }
     }
 }
