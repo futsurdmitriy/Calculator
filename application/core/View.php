@@ -7,7 +7,7 @@ class View
         $message = new Messages;
         ( $data ) ? extract( $data ) : '';
         
-        if ($session->get('userLogged')) {
+        if (true===$session->get('UserLogged','Users')) {
             $template_view = 'logged_in_template_view.php';            
         } else {
             $template_view = 'logged_out_template_view.php';

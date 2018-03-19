@@ -8,5 +8,6 @@ require_once 'lib/Login.php';
 require_once 'lib/Messages.php';
 require_once 'lib/Session.php';
 require_once 'lib/DataEntryCheck.php';
+require_once 'lib/SQLQueries.php';
 $session = Session::getInstance();
 Route::start(); // запускаем маршрутизатор

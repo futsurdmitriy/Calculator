@@ -20,7 +20,7 @@
                         </form>
                     </li>
                     <li id="login">
-                            <?php echo "Hello: " . $session->get('userLogged');?>
+                            <?php echo "Hello: " . $session->get('UserName','Users');?>
                     </li>
                 </ul>
             </nav>

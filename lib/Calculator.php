@@ -6,6 +6,7 @@ class Calculator
     {
         $session = Session::getInstance();
         $message = new Messages();
+        $SQLQuery = new SQLQueries;
 
         $data    = $dataToCalculate;
 
@@ -15,28 +16,30 @@ class Calculator
 
             //if(true == $session->get('userLogged')) {
                 if (isset($data['Add'])) {
-                    $this->result = $num1 + $num2;
+                    $res = $num1+$num2;
+                    $this->result = "$num1 + $num2 = ". $res;
 
-                    return $this->result;
-                } elseif (isset($data['Subtract'])) {
-                    $this->result = $num1 - $num2;
+                } elseif (isset($data['Subtract'])) {                    
+                    $res = $num1-$num2;
+                    $this->result = "$num1 - $num2 = ". $res;
 
-                    return $this->result;
                 } elseif (isset($data['Multiply'])) {
-                    $this->result = $num1 * $num2;
+                    $res = $num1*$num2;
+                    $this->result = "$num1 * $num2 = ". $res;
 
-                    return $this->result;
                 } elseif (isset($data['Divide'])) {
-                        if ($num2 == 0) {
-                            $this->result = $message->setMessage('Error','Divide by zero');
 
-                            return $this->result;
-                        } else {
-                            $this->result = $num1 / $num2;
+                    if ($num2 == 0) {
+                        $this->result = $message->setMessage('Error','Divide by zero');
 
-                            return $this->result;
-                        }
+                    } else {
+                        $res = $num1/$num2;
+                        $this->result = "$num1 / $num2 = ". $res;
                     }
+                }
+                
+                    $sql = $SQLQuery->InsertInto('history ', 'Datetime, Expression, UserId', "'".date("Y-m-d H:i:s")."', "."'".$this->result."', "."'".$session->get('Id','Users')."'");
+                    return $this->result;
                // } else {
                   //  $message->setMessage('Error','Please relogin to continue');
                    // header('Location: http://calc.com');

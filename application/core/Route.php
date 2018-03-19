@@ -5,13 +5,13 @@ class Route
     {
         $session  = Session::getInstance();
         $userData = new Login;
-
+       
         // контроллер и действие по умолчанию
         $controller_name = 'Home';
         $action_name     = 'index';
 
         if (isset($_POST['logout'])) {
-           $session->_delete('userLogged');
+           $session->set('UserLogged',false,'Users');
            header('Location:/'.$controller_name);
         }
 

@@ -4,15 +4,15 @@ class Messages
     public function setMessage($typeOfMessage,$message)
     {
         $session = Session::getInstance();
-        $messages = $session->get('messages', []);
+        $messages = $session->get('messages', 'Messages',[]);
         $messages[$typeOfMessage][] = $message;
-        $session->set('messages', $messages);             
+        $session->set('messages', $messages, 'Messages');
     }
 
     public function showMessage()
     {
         $session = Session::getInstance();
-        $messages = $session->get('messages', []);
+        $messages = $session->get('messages','Messages' ,[]);
 
         foreach ($messages as $type => $lines) {
             foreach ($lines as $key => $value) {
@@ -22,6 +22,6 @@ class Messages
             unset($messages[$type]);
         }
 
-        $session->set('messages', $messages);             
+        $session->set('messages', $messages, 'Messages');             
     }
 }

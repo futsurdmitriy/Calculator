@@ -11,7 +11,7 @@
             <br/>
             <input type="text" name ="number2" placeholder="Number2"/>
         </form>
-        <h3> Result: <?php echo $data['result'] . $message->showMessage();; ?> </h3>
+        <h3> Result: <?php echo $data['result'] . $message->showMessage(); ?> </h3>
     </div>   
 </div>
 

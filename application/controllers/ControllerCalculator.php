@@ -13,7 +13,7 @@ class ControllerCalculator extends Controller
         $session = Session::getInstance();
         $message = new Messages;
 
-        if (true == $session->get('userLogged')) {
+        if (true == $session->get('UserLogged','Users')) {
             $dataToCalculate = $dataEntry->CorrectDataCheck($_POST);
             $data['result'] = $calculator->calculate($dataToCalculate);            
             $this->view->generate('calculator_view.php', 'template_view.php', $data); 
