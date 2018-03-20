@@ -35,13 +35,11 @@ public function InsertInto($table, $columns, $values)
     return $conn->query($sql);
 }
 
-public function DeleteFrom($table, $columns, $values)
+public function DeleteFrom($table, $where)
 {
     $conn = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
-    $sql = ("INSERT INTO ".$table. "(".$columns.") VALUES (".$values.");");
-    //print_r($sql);
-    //echo '<br/>';
-    
+    $sql = ("DELETE FROM ".$table." WHERE ".$where.";");
+
     return $conn->query($sql);
 }
 

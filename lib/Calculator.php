@@ -55,13 +55,19 @@ class Calculator
         $session  = Session::getInstance();
         $SQLQuery = new SQLQueries;
 
-        self::$history  = $SQLQuery->SelectFrom('Expression, Datetime', 'history','UserId='.$session->get('Id','Users'));        
+        self::$history  = $SQLQuery->SelectFrom('Id, Expression, Datetime', 'history','UserId='.$session->get('Id','Users'));        
         self::$history -> setFetchMode(PDO::FETCH_NUM);
 
             while ($row = self::$history->fetch()) {
                 echo "<tr>";
-                echo "<td>" . $row[0] . "</th>";
-                echo "<td>" . $row[1] . "</th>";
+                echo "<td>" . $row[1] . "</td>";
+                echo "<td>" . $row[2] . "</td>";
+                echo '<td>'.
+                        '<form  method='.'post'.'>'.
+                            '<input type="submit" name="Delete" value="Delete"/>'.
+                            '<input type="hidden" name="hidden" value="'.$row[0].'"/>'.
+                        '</form>'.
+                      '</td>';
                 echo"</tr>";
             }
     }

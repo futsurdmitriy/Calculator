@@ -5,6 +5,7 @@ class Route
     {
         $session  = Session::getInstance();
         $userData = new Login;
+        $SQLQuery = new SQLQueries;
        
         // контроллер и действие по умолчанию
         $controller_name = 'Home';
@@ -13,6 +14,10 @@ class Route
         if (isset($_POST['logout'])) {
            $session->set('UserLogged',false,'Users');
            header('Location:/'.$controller_name);
+        }
+
+        if (isset($_POST['Delete'])) {
+            $SQLQuery->DeleteFrom('history','Id='.$_POST['hidden']);
         }
 
         //$userData->userDataCheck($_POST);
