@@ -4,7 +4,7 @@ class View
     function generate($content_view, $template_view, $data = '')
     {
         $session = Session::getInstance();
-        $message = new Messages;
+        //$message = new Messages;
         ( $data ) ? extract( $data ) : '';
         
         if (true===$session->get('UserLogged','Users')) {

@@ -7,6 +7,6 @@
         </form>
     </div>
         <?php
-            $message->showMessage();
+            Messages::showMessage();
         ?>
 </section>

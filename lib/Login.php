@@ -5,7 +5,6 @@ class Login
 public function sqlsmth($userDataToCheck)
 {
     $session = Session::getInstance();
-    $message = new Messages;
     $SQLQuery = new SQLQueries;
 
     $result = $SQLQuery->SelectFrom('Id, UserName, Password', 'users');
@@ -39,7 +38,7 @@ public function sqlsmth($userDataToCheck)
                     header('Location: /Calculator/');
                 }
             }
-        $message->setMessage('Error','Wrong login or password');
+            Messages::setMessage('Error','Wrong login or password');
             }
         }
     }

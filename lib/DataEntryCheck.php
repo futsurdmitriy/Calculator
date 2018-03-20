@@ -4,7 +4,6 @@ class DataEntryCheck
     public function correctDataCheck($dataToCheck)
     {
         $session = Session::getInstance();
-        $message = new Messages;
 
             if (empty($dataToCheck)&&(!isset($dataToCheck['number1']) || !isset($dataToCheck['number2']))) {
                 return false;
@@ -21,7 +20,7 @@ class DataEntryCheck
                     )
                 )
             ) {
-                $message->setMessage('Error','Please Enter The Numbers to Calculate');
+                Messages::setMessage('Error','Please Enter The Numbers to Calculate');
 
                 return false;
             }
@@ -29,7 +28,7 @@ class DataEntryCheck
             $dataToCheck = str_replace(",", ".", $dataToCheck);
 
             if (!is_numeric($dataToCheck['number1']) || !is_numeric($dataToCheck['number2'])) {
-                $message->setMessage('Error','Please Enter The Correct Data to Calculate');
+                Messages::setMessage('Error','Please Enter The Correct Data to Calculate');
 
                 return false;
             }

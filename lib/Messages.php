@@ -1,7 +1,7 @@
 <?php
 class Messages 
 {
-    public function setMessage($typeOfMessage,$message)
+     static public function setMessage($typeOfMessage,$message)
     {
         $session = Session::getInstance();
         $messages = $session->get('messages', 'Messages',[]);
@@ -9,7 +9,7 @@ class Messages
         $session->set('messages', $messages, 'Messages');
     }
 
-    public function showMessage()
+    static public function showMessage()
     {
         $session = Session::getInstance();
         $messages = $session->get('messages','Messages' ,[]);

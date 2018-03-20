@@ -17,19 +17,27 @@ header{
 }
 
 .calculator_content{
-    height: 600px;
+    height: 200px;
     width: 400px;
-    margin: 35px auto 35px auto;
-    padding: 0;
+    margin: auto auto auto auto;
+    padding: 15px 50px 90px 50px;
     border: 5px solid #000000;
-    background-color: #6b6a6a;
+    background-color: #00eeff;
 }
 
-.about_content{
-    background-color: #373833;
-    text-align:justify;
-    width: 939px;
-    border-right: 1px solid #eeeeee;
+ .p_color {
+    color: #ff0000;
+}
+
+.history_content{
+    
+}
+
+h2#calc_content{
+     color: white;
+     text-align: center;
+     margin: auto auto auto auto;
+     padding: 10px 0px 10px 0px;
 }
 
 div#calculator{
@@ -50,7 +58,7 @@ header h1 {
 .wrapper{
     width: 940px;
     margin: 35px auto 35px auto;
-    padding: 0;
+    padding: 0px;
     border: 5px solid #000000;
     background-color: #ffffff;
 }
@@ -88,11 +96,24 @@ section.login {
     border-right: 1px solid #373833;
 }
 
+section.calculator {
+    padding-bottom: 15px;
+    width: 940px;
+    background-color: #373833;
+    text-align: center;
+}
 
 section.about {
     background-color: #373833;
+    text-align:justify;
+    width: 939px;
+    border-right: 1px solid #eeeeee;
+}
+
+section.home {
+    background-color: #373833;
     float: left;
-    width: 659px;
+    width: 629px;
     border-right: 1px solid #eeeeee;
 }
 
@@ -153,16 +174,16 @@ h2 {
 
 h3 {
     margin: 0px 0px 10px 0px;
-    color: #de6581;
+    color: #000000;
 }
 
 aside h2 {
     padding: 30px 0px 10px 0px;
-    color: #de6581;
+    color: #000000;
 }
 
 footer {
-    font-size: 80%;
+    font-size: 90%;
     padding: 7px 0px 0px 20px;
 }
 
@@ -170,7 +191,7 @@ input[type=text], select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 3px solid #ccc;
+    border: 3px solid rgb(0, 0, 0);
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -193,8 +214,39 @@ input[type=submit] {
     cursor: pointer;
 }
 
+button {
+    vertical-align: middle;
+    font-size: 0.9em;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 5px 15px 5px 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 input[type=submit]:hover {
     background-color: #45a049;
+}
+
+th{
+    border: 2px solid black;
+    text-align: center;
+}
+table, td {
+    
+    border: 2px solid black;
+    text-align: justify;
+}
+
+div table {
+    width: 80%;
+    text-align: justify;
+    padding: 10px;
+    height: 300px;   
+    margin: auto auto auto auto;
+    background-color: #00eeff;
 }
 
 input#logout[type=submit] {

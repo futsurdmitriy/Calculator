@@ -1,4 +1,4 @@
-<section class="about">
+<section class="home">
     <article>
         <figure>
             <img src="/images/solidCalculator.jpg" alt="solidCalculator" width="290" heigth="190">
